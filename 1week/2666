@@ -1,0 +1,14 @@
+/**
+ * @param {Function} fn
+ * @return {Function}
+ */
+var once = function(fn) {
+    let result = false;
+    return function(...args){
+        if(!result){
+            result = true;
+            return fn(...args);
+        }
+        
+    }
+};
